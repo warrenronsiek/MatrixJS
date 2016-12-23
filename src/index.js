@@ -1,3 +1,3 @@
 const x: number = 12;
 
-export default x;
+export default function() {return x};

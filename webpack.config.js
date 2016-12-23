@@ -18,7 +18,9 @@ const build = {
     output: {
         path: paths.dist,
         publicPath: '/',
-        filename: 'bundle.js'
+        filename: 'matrix.js',
+        library: "matrix",
+        libraryTarget: "var"
     },
     module: {
         loaders: [
