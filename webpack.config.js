@@ -10,17 +10,16 @@ const paths = {
 
 const build = {
     devtool: 'source-map',
-    entry: paths.src,
+    entry: [path.join(paths.src, 'index.ts')],
     resolve: {
-        extensions: ['', '.js']
+        extensions: ['', '.js', '.ts']
     },
     target: 'node',
     output: {
         path: paths.dist,
-        publicPath: '/',
         filename: 'matrix.js',
-        library: "matrix",
-        libraryTarget: "var"
+        library: 'matrix',
+        libraryTarget: "umd"
     },
     module: {
         loaders: [
@@ -28,18 +27,23 @@ const build = {
                 test: /\.js$/,
                 loader: 'babel',
                 exclude: paths.nodeModules
+            },
+            {
+                test: /\.ts$/,
+                loader: 'ts-loader',
+                exclude: paths.nodeModules
             }
         ]
     },
     plugins: [
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {warnings: false, drop_console: true},
-            beautify: false,
-            comments: false,
-            mangle: {except: ['$', 'webpackJsonp'], screw_ie8: true, keep_fnames: false}
-        })
+        // new webpack.optimize.DedupePlugin(),
+        // new webpack.optimize.OccurrenceOrderPlugin(),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {warnings: false, drop_console: true},
+        //     beautify: false,
+        //     comments: false,
+        //     mangle: {except: ['$', 'webpackJsonp'], screw_ie8: true, keep_fnames: false}
+        // })
     ]
 };
 

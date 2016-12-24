@@ -5,7 +5,7 @@ const assert = require('assert');
 
 describe('testing', function() {
 
-    const b = require('../dist/matrix');
+    const b = require('../dist/matrix').default;
     it('should be 12', function () {
         assert.equal(b,12);
     })
