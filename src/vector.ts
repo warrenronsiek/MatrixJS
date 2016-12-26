@@ -10,12 +10,12 @@ class Vector {
         this.length = array.length;
     };
 
-    scalar = (num: number): Vector=> {
+    scalarMult = (num: number): Vector=> {
         return new Vector(this.array.map(x => x * num));
     };
 
     negative = (): Vector => {
-        return this.scalar(-1)
+        return this.scalarMult(-1)
     };
 
     //TODO: create forEach curry method to simplify addition/multiplication/dotprod
@@ -42,6 +42,10 @@ class Vector {
             });
             return new Vector(newVector);
         }
+    };
+
+    scalarDiv = (scalar: number): Vector => {
+        return this.scalarMult(1/scalar)
     };
 
     subtract = (otherVector: Vector): Vector => {
