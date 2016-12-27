@@ -10,21 +10,27 @@ const paths = {
 
 const build = {
     devtool: 'source-map',
-    entry: paths.src,
+    entry: [path.join(paths.src, 'index.ts')],
     resolve: {
-        extensions: ['', '.js']
+        extensions: ['', '.js', '.ts']
     },
     target: 'node',
     output: {
         path: paths.dist,
-        publicPath: '/',
-        filename: 'bundle.js'
+        filename: 'matrix.js',
+        library: 'matrix',
+        libraryTarget: "umd"
     },
     module: {
         loaders: [
             {
                 test: /\.js$/,
                 loader: 'babel',
+                exclude: paths.nodeModules
+            },
+            {
+                test: /\.ts$/,
+                loader: 'ts-loader',
                 exclude: paths.nodeModules
             }
         ]
