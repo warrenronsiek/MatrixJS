@@ -18,9 +18,10 @@
   },
   "homepage": "https://github.com/warrenronsiek/MatrixJS#readme",
   "dependencies": {
-    "lodash": "^4.17.2"
+    "lodash": "^4.17.3"
   },
   "devDependencies": {
+    "@types/core-js": "^0.9.35",
     "awesome-typescript-loader": "^3.0.0-beta.17",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
