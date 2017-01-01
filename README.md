@@ -1,8 +1,9 @@
 Description
 ===========
-This is a very simple (and very incomplete) implementation of
-Vectors/Matrices in Typescript. Mostly it is an exercise in making an
-automated build/testing process with webpack and mocha.
+This is a very simple (and very crappy) implementation of
+Vectors/Matrices in Typescript. Publishing because it is a boilerplate
+in making an automated build/testing process with webpack and mocha that
+I will probably use again.
 
 Installation
 ------------
